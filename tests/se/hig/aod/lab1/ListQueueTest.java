@@ -63,13 +63,41 @@ public class ListQueueTest {
 
     @Test
     public void enqueue() {
+        testQueue.enqueue(fixture[0]);
+        assertEquals(fixture[0], testQueue.dequeue());
+
     }
 
     @Test
     public void dequeue() {
+
+        populateQueue(fixture);
+        for (Character c : fixture) {
+            assertEquals(c, testQueue.dequeue());
+        }
+
+        try {
+            testQueue.dequeue();
+            fail("Expected QueueEmptyException");
+        } catch (QueueEmptyException qee) {
+            assertNotNull("Expected QueueEmptyException", qee);
+        }
+
     }
 
     @Test
     public void getFront() {
+        try {
+            testQueue.getFront();
+            fail("Expected QueueEmptyException");
+        } catch (QueueEmptyException qee) {
+            assertNotNull("Expected QueueEmptyException", qee);
+        }
+        populateQueue(fixture);
+        assertEquals(fixture[0], testQueue.getFront());
+        assertEquals(fixture[0], testQueue.getFront());
+        testQueue.dequeue();
+        assertEquals(fixture[1], testQueue.getFront());
+        testQueue.clear();
     }
 }
