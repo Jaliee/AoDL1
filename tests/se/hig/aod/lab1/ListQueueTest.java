@@ -6,6 +6,12 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
+/**
+ * Test class for ListQueue
+ *
+ * @author Joakim Liljeroth
+ */
+
 public class ListQueueTest {
 
     ListQueue<Character> testQueue;
@@ -18,12 +24,12 @@ public class ListQueueTest {
     }
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         testQueue = new ListQueue<>();
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         testQueue = null;
     }
 

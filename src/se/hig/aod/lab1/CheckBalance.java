@@ -7,11 +7,11 @@ import java.util.Scanner;
  *
  * @author Magnus Blom, Peter Jenke
  * @version 2014-01-16
+ * Modified by Joakim Liljeroth
  */
 public class CheckBalance {
     public static boolean isBalanced(String uttryck) {
-        Stack<Character> charStack = new ListStack<Character>(); // Skapa en ny
-        // stack
+        Stack<Character> charStack = new ListStack<Character>();
         boolean balancerad = true;
         for (int i = 0; i < uttryck.length() && balancerad == true; i++) {
             if (uttryck.charAt(i) == '(') {
@@ -29,9 +29,6 @@ public class CheckBalance {
         }
         charStack.clear();
         return balancerad;
-
-        // Kod enligt algoritmen-beskrivning på s. 4
-
     }
 
     public static void main(String[] args) {
@@ -46,4 +43,4 @@ public class CheckBalance {
         }
         console.close();
     }
-} // end of class CheckBalance
+}

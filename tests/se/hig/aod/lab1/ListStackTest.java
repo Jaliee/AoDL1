@@ -6,6 +6,12 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * Test class for ListStack
+ *
+ * Modified by Joakim Liljeroth
+ */
+
 public class ListStackTest {
     ListStack<Character> testStack;
     Character[] fixture = {'a', 'b', 'c', 'd'};
@@ -17,12 +23,12 @@ public class ListStackTest {
     }
 
     @Before
-    public void setUp() throws Exception {
-        testStack = new ListStack<Character>();
+    public void setUp() {
+        testStack = new ListStack<>();
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         testStack = null;
     }
 
